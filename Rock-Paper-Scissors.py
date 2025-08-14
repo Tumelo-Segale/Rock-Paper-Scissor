@@ -1,21 +1,21 @@
 import random
 
-def get_user_choice():
+def get_user_choice(): # Get user's choice
     user_input = input("Enter Rock, Paper, or Scissors: ").lower()
-    if user_input in ['rock', 'paper', 'scissors']:
+    if user_input in ['rock', 'paper', 'scissors']: # Choices to select from
         return user_input
-    else:
+    else: # If user entered something not in the choices
         print("Invalid choice. Please try again.")
         return get_user_choice()
 
-def get_computer_choice():
+def get_computer_choice(): # Computer chooses from given choices
     choices = ['rock', 'paper', 'scissors']
-    return random.choice(choices)
+    return random.choice(choices) # Select choice at random
 
 def determine_winner(user_choice, computer_choice):
-    if user_choice == computer_choice:
+    if user_choice == computer_choice: # If game is a tie
         return "It's a tie!"
-    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
+    elif user_choice == 'rock' and computer_choice == 'scissors' or \
          (user_choice == 'paper' and computer_choice == 'rock') or \
          (user_choice == 'scissors' and computer_choice == 'paper'):
         return "You win!"
